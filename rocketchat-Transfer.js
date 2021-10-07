@@ -7,7 +7,7 @@ function action(bp: typeof sdk, event: sdk.IO.IncomingEvent, args: any, { user, 
   const axios = require('axios')
 
   /**
-   * @title Transfer visitor to departament
+   * @title Transfer visitor to department
    * @category Channel Rocket.Chat
    * @author LigeroSmart https://ligerosmart.com
    * @param {string} department Department Name
