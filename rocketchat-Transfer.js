@@ -2,7 +2,7 @@ function action(bp: typeof sdk, event: sdk.IO.IncomingEvent, args: any, { user, 
   /** Your code starts below */
 
   /* You must provid the Botpress App Webhook from Rocketchat */
-  const rocketWebhook = 'http://localhost:3001/api/apps/public/6a8e6b6c-7a25-47c9-94e8-5af5075981ad/incoming'
+  const rocketWebhook = 'http://rocketchat:3000/api/apps/public/6a8e6b6c-7a25-47c9-94e8-5af5075981ad/incoming'
 
   const axios = require('axios')
 
