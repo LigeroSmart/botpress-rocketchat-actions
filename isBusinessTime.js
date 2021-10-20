@@ -14,6 +14,9 @@ function action(bp: typeof sdk, event: sdk.IO.IncomingEvent, args: any, { user, 
     var feriados = []
     //Natal
     feriados.push('2021-12-25')
+    feriados.push('2021-12-31')
+    feriados.push('2022-01-01')
+    //feriados.push('2021-10-20')
     //feriados.push('2021-10-19')
 
     var now = new Date()
@@ -26,6 +29,7 @@ function action(bp: typeof sdk, event: sdk.IO.IncomingEvent, args: any, { user, 
       if (data == feriados[i]) {
         console.log('Feriado')
         temp.Expediente = 'N'
+        return
       }
     }
 
@@ -36,6 +40,7 @@ function action(bp: typeof sdk, event: sdk.IO.IncomingEvent, args: any, { user, 
       case 'Domingo':
         console.log('Não útil')
         temp.Expediente = 'N'
+        return
         break
       default:
         console.log(`Dia útil`)
@@ -43,8 +48,10 @@ function action(bp: typeof sdk, event: sdk.IO.IncomingEvent, args: any, { user, 
         if (hora <= 8 || hora >= 17) {
           console.log('Fora do horário comercial')
           temp.Expediente = 'N'
+          return
         } else {
           temp.Expediente = 'S'
+          return
         }
     }
     //console.log('horário de atendimento')
